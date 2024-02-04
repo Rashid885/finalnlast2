@@ -1,0 +1,29 @@
+[[main]]
+weight = 1
+name = "Home"
+url = "/"
+
+[[main]]
+weight = 4
+name = "Jazz"
+url = "/Jazz/"
+
+[[main]]
+weight = 3
+name = "Call Pkg"
+url = "/call-packages/"
+
+[[main]]
+weight = 5
+name = "About"
+url = "/about/"
+
+[[footer]]
+weight = 1
+name = "Contact Form"
+url = "/contact-form/"
+
+[[footer]]
+weight = 1
+name = "Elements"
+url = "/elements/"
