@@ -1,0 +1,24 @@
+[[main]]
+weight = 1
+name = "Home"
+url = "/"
+
+[[main]]
+weight = 1
+name = "Laptops"
+url = "/Laptops/"
+
+[[main]]
+weight = 1
+name = "Reviews"
+url = "/Reviews/"
+
+[[footer]]
+weight = 1
+name = "Elements"
+url = "/elements/"
+
+[[footer]]
+weight = 1
+name = "Contact Form"
+url = "/contact-form/"

@@ -1,0 +1,49 @@
+<header>
+    {{ if .Params.categories }}
+    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope
+            itemtype="https://schema.org/ListItem">
+          <a itemprop="item" href="{{.Site.BaseURL}}">
+              <span class="breadcrumb-list" itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        {{ with .Params.categories }}
+        <li itemprop="itemListElement" itemscope
+            itemtype="https://schema.org/ListItem">
+          <a itemscope itemtype="https://schema.org/WebPage"
+             itemprop="item" itemid="{{ index . 0 | urlize | absURL }}/"
+             href="{{ index . 0 | urlize | absURL }}/">
+            <span class="breadcrumb-list" itemprop="name">{{ index . 0 }}</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        {{ end }}
+      </ol>
+    {{ end }}
+    <h1 class="page-title">{{.Title}}</h1>
+    <div class="single-post-meta">
+        <p class="single_meta">
+    {{- if .Site.Data.authors -}}
+        {{ $author := index .Site.Data.authors (.Params.author | anchorize) }}
+        <span class="by-author">By <a href="/author/{{.Params.author | anchorize}}/">{{ $author.name }}</a></span>
+    {{- else -}}
+        <span class="by-author">By <a href="/author/{{.Params.author | anchorize}}/">{{ $author.name }}</a></span>
+    {{- end -}}
+    <time class="published-date relative-date"
+        datetime="{{.Date}}"
+        data-published-date="{{.Date}}">
+        - Updated: <time class="entry__meta-date flex flex-row items-center f7"
+            title="{{.Params.updateDate}}">
+            {{ if .Params.updateDate }}
+                {{ dateFormat "January 2, 2006" .Params.updateDate }}
+            {{ else }}
+                {{ dateFormat "January 2, 2006" .Date }}
+            {{ end }}
+        </time>
+    </time>
+</p>
+
+    </div>
+    {{ if .Params.sub_title }}
+        <p class="sub-title">{{.Params.sub_title}}</p>        
+    {{ end }}
+</header>
